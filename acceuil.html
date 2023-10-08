@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Page protégée par mot de passe</title>
+    <script>
+    var real_password = "le GOAT";
+    var real_username = "Mentolaprime";
+    var other_page_link = "./test.html";
+
+    function submitMe(username, password){
+         
+        if(password == real_password && username == real_username){
+            window.location.href = other_page_link;
+        } else {
+            alert("Mauvais mot de passe ou nom d'utilisateur");
+        }
+    }
+    </script>   
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        .container {
+            max-width: 300px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #f7f7f7;
+        }
+        input[type="text"],
+        input[type="password"],
+        #button_id{
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Entrez le nom d'utilisateur et le mot de passe pour accéder à cette page :</h1>
+            <input type="text" id="username_id" name="nom_utilisateur" placeholder="Nom d'utilisateur" required>
+            <input type="password" id="password_id" name="mot_de_passe" placeholder="Mot de passe" required>
+            <button  onclick="submitMe(document.getElementById('username_id').value, document.getElementById('password_id').value)" id="button_id">Valider</button>
+    </div>
+</body>
+</html>
